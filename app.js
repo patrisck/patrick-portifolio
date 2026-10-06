@@ -18,7 +18,7 @@ function renderPage(index,page){
  const state=readerStates.get(index)||{page:1,zoom:100};state.page=page;readerStates.set(index,state);
  const image=viewer.querySelector('.reader-image');
  const name=project.pdf.split('/').pop().replace('.pdf','');
- image.src=`assets/projects/${name}-${String(page).padStart(2,'0')}.webp`;
+ image.src=`${name}-${String(page).padStart(2,'0')}.webp`;
  image.alt=`${project.title} — página ${page} de ${project.pages}`;image.hidden=false;
  viewer.querySelector('.reader-page').value=String(page);
  viewer.querySelector('[data-reader="prev"]').disabled=page===1;
